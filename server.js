@@ -1,7 +1,16 @@
-var connect = require('connect');
-var serveStatic = require('serve-static');
+var express = require('express');
+var app = express();
 
-var app = connect();
+app.use(express.static(__dirname + '/'));
 
-app.use(serveStatic(__dirname, {'index': ['index.html']}));
-app.listen(3000);
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
+

@@ -1,4 +1,3 @@
-<script>
 //hide all the stages to start
 $('.stage').each(function () {
     $(this).hide();
@@ -208,4 +207,3 @@ $('#siteList tbody').on('click', 'tr', function () {
         $(this).addClass('selected');
     }
 });
-</script>

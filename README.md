@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/jgroom33/EthUI.git
-npm install connect serve-static
+npm install express
 node server.js
 ```
 

@@ -1,114 +1,10 @@
-<html lang="en">
- <head>
-
-  <title>EthUI</title>
-
-  <link rel="stylesheet" href="styles/default.css" />
-<link rel="stylesheet" type="text/css" href="styles/jgroom.jquery.datatables.css">
-
-  <script src="resources/js/jquery-1.11.3.min.js"></script>
-    <script src="resources/js/jquery.dataTables.min.js"></script>
- </head>
- 
- <body>
-<div id="provisionContainer">
-    <div id="proceed">
-        <p></p>
-        <table style="width:100%">
-            <tr>
-                <td>
-                    <button id="back" type="button">Back</button>
-                </td>
-                <td>
-                    <button id="next" type="button">Next</button>
-                </td>
-                <td>
-                    <button id="execute" type="button">execute</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div id="start" class="stage">
-        <div id="serviceProfileSelector">
-            <label for="serviceProfile-input">Pick a Service Profile</label>
-            <input type="text" id="serviceProfile-input" list="serviceProfile-datalist" placeholder="e.g. EVPN"></input>
-            <datalist id="serviceProfile-datalist" class="stage1">
-                <option value="EVPN">EVPN</option>
-                <option value="ePipe">EVPN over SDH</option>
-                <option value="EVPN_EAN">EVPN over EAN</option>
-            </datalist>
-        </div>
-        <div id="customerSelector">
-            <label for="customer-input">Pick a Customer</label>
-            <input type="text" id="customer-input" list="customer-datalist" placeholder="e.g. Vodafone"></input>
-            <datalist id="customer-datalist"></datalist>
-        </div>
-    </div>
-    <div class="stage">
-        <!--Each of these need descripotions pop-outs-->
-        <p></p>
-        <button id="elinebutton" type="button"></button>
-        <p></p>
-        <button id="elanbutton" type="button"></button>
-        <p></p>
-        <button id="eaccessbutton" type="button"></button>
-        <p></p>
-        <button id="internetbutton" type="button"></button>
-        <p></p>
-        <button id="voicebutton" type="button"></button>
-    </div>
-    <div class="stage">
-        <p></p>
-        <button id="evp" type="button">EVP</button>
-        <p></p>
-        <button id="ep" type="button">EP</button>
-    </div>
-    <div class="stage">
-        <!--Each of these need descripotions pop-outs especially the mappings. The DSCP and .1dpri mappings are derived from the service definition -->
-        <p></p>
-        <button id="perevcbutton" type="button"></button>
-        <p></p>
-        <button id="perpributton" type="button"></button>
-        <p></p>
-        <button id="perdscpbutton" type="button"></button>
-    </div>
-    <div id="deviceSelect" class="stage">
-        <div id="eLANsites">
-            <table cellpadding="0" cellspacing="0" border="0" id="elansitestable"></table>
-        </div>
-        <div id="eLinesites">
-            <table cellpadding="0" cellspacing="0" border="0" class="display" id="elinesitestable"></table>
-        </div>
-        <div id="eAccesssites">
-            <table cellpadding="0" cellspacing="0" border="0" class="display" id="eAccesssitestable"></table>
-        </div>
-        <div id="ePointsites">
-            <table cellpadding="0" cellspacing="0" border="0" class="display" id="epointsitestable"></table>
-        </div>
-        <p></p>
-        <table cellpadding="0" cellspacing="0" border="0" class="display" id="siteList"></table>
-        <p></p>
-    </div>
-    <div id="final" class="stage">
-        <div id="bwSelector">
-            <label for="bw-input">Choose Bandwidth</label>
-            <!--<input type="text" id="bw-input" list="bw-datalist" placeholder="1M"></input>-->
-            <select id="bw-datalist"></select>
-        </div>
-    </div>
-    <p></p>
-</div>
-<script>
 //hide all the stages to start
-
 $('.stage').each(function () {
     $(this).hide();
 });
 $('#back').hide();
 $('#execute').hide();
 $('#start').show();
-
-
 //define the vars to be used each stage
 var customers = {
     "custID": [{
@@ -125,7 +21,6 @@ var customers = {
             "text": "Hi-tech",
     }]
 };
-
 var bw = {
     "bwvals": [{
         "value": 1,
@@ -177,9 +72,6 @@ var bw = {
             "text": "70M",
     }]
 };
-
-
-
 var nodes = [
     ['10.10.10.11', 'CHLG0103', 'CN 3916', '1', 'datacenter_p1'],
     ['10.10.10.12', 'NTHS7362', 'CN 3930', '1', 'Site 1_p1'],
@@ -189,7 +81,6 @@ var nodes = [
     ['10.10.10.13', 'NTHS9372', 'CN 3916', '3', 'Site 2_p2'],
     ['10.10.10.17', 'ABCD1234', 'CN 3930', '1', 'Site 4']
 ];
-
 //header row for table
 $('#siteList').dataTable({
     "bLengthChange": false,
@@ -210,20 +101,14 @@ $('#siteList').dataTable({
     }]
 });
 var siteListTable = $('#siteList').DataTable();
-
 $(customers.custID).each(function (idx, o) {
     custOption = "<option value=\"" + o.value + "\">" + o.text + "</option>";
     $('#customer-datalist').append(custOption);
 });
-
 $(bw.bwvals).each(function (idx, o) {
     bwOption = "<option value=\"" + o.value + "\">" + o.text + "</option>";
     $('#bw-datalist').append(bwOption);
 });
-
-
-
-
 $('#back').click(function () {
     $('.stage').each(function () {
         if ($(this).css('display') == 'block') {
@@ -238,12 +123,9 @@ $('#back').click(function () {
                 $('#execute').hide();
             }
             return false;
-
         }
-
     });
 });
-
 $('#next').click(function () {
     $('#back').show();
     $('.stage').each(function () {
@@ -252,59 +134,46 @@ $('#next').click(function () {
             if ($(this).next().attr('id') == 'final') {
                 $('#execute').show();
                 $('#next').hide();
-
             }
             $(this).next('.stage').slideDown();
             $(this).slideUp();
             return false;
-
         }
-
     });
 });
-
 $('#execute').click(function () {
     alert('good luck!');
-
 });
-
-
 $('#elinebutton').click(function () {
     $('#eLANsites').hide();
     $('#eAccesssites').hide();
     $('#ePointsites').hide();
     $('#eLinesites').show();
-
 });
 $('#elanbutton').click(function () {
     $('#eLANsites').show();
     $('#eAccesssites').hide();
     $('#ePointsites').hide();
     $('#eLinesites').hide();
-
 });
 $('#eaccessbutton').click(function () {
     $('#eLANsites').hide();
     $('#eAccesssites').show();
     $('#ePointsites').hide();
     $('#eLinesites').hide();
-
 });
 $('#voicebutton').click(function () {
     $('#eLANsites').hide();
     $('#eAccesssites').hide();
     $('#ePointsites').show();
     $('#eLinesites').hide();
-
 });
 $('#internetbutton').click(function () {
     $('#eLANsites').hide();
     $('#eAccesssites').hide();
     $('#ePointsites').show();
     $('#eLinesites').hide();
-
 });
-
 //
 $('#elinesitestable').dataTable({
     "bLengthChange": false,
@@ -322,9 +191,7 @@ $('#elinesitestable').dataTable({
         "title": "Action"
     }]
 });
-
 var siteSelectTable = $('#elinesitestable').DataTable();
-
 $(".addSite").click(function () {
         $(this).html('Remove');
 	var myrow = $(this).closest('tr').index();
@@ -332,7 +199,6 @@ $(".addSite").click(function () {
 	siteSelectTable.cell( myrow, 1 ).data(siteListTable.cell(fromrow, 4).data()).draw();
     siteListTable.row('.selected').remove().draw(false);
 });
-
 $('#siteList tbody').on('click', 'tr', function () {
     if ($(this).hasClass('selected')) {
         $(this).removeClass('selected');
@@ -341,8 +207,3 @@ $('#siteList tbody').on('click', 'tr', function () {
         $(this).addClass('selected');
     }
 });
-
-</script>
-</body>
-
-</html>

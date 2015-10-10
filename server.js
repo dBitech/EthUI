@@ -1,7 +1,16 @@
-var connect = require('connect');
-var serveStatic = require('serve-static');
+var express = require('express');
+var app        =    express();
 
-var app = connect();
+app.use(express.static(__dirname + '/public'));
 
-app.use(serveStatic(__dirname, {'index': ['index.html']}));
-app.listen(3000);
+require('./router/main')(app);
+app.set('views',__dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+
+var server = app.listen(3000,function(){
+console.log("woooo");
+});
+
+

@@ -1,0 +1,107 @@
+<html lang="en">
+ <head>
+
+  <title>EthUI</title>
+
+  <link rel="stylesheet" href="../styles/default.css" />
+<link rel="stylesheet" type="text/css" href="../styles/jgroom.jquery.datatables.css">
+
+  <script src="../resources/js/jquery-1.11.3.min.js"></script>
+    <script src="../resources/js/jquery.dataTables.min.js"></script>
+ </head>
+ 
+ <body>
+<div id="provisionContainer">
+    <div id="proceed">
+        <p></p>
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <button id="back" type="button">Back</button>
+                </td>
+                <td>
+                    <button id="next" type="button">Next</button>
+                </td>
+                <td>
+                    <button id="execute" type="button">execute</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="start" class="stage">
+        <div id="serviceProfileSelector">
+            <label for="serviceProfile-input">Pick a Service Profile</label>
+            <input type="text" id="serviceProfile-input" list="serviceProfile-datalist" placeholder="e.g. EVPN"></input>
+            <datalist id="serviceProfile-datalist" class="stage1">
+                <option value="EVPN">EVPN</option>
+                <option value="ePipe">EVPN over SDH</option>
+                <option value="EVPN_EAN">EVPN over EAN</option>
+            </datalist>
+        </div>
+        <div id="customerSelector">
+            <label for="customer-input">Pick a Customer</label>
+            <input type="text" id="customer-input" list="customer-datalist" placeholder="e.g. Vodafone"></input>
+            <datalist id="customer-datalist"></datalist>
+        </div>
+    </div>
+    <div class="stage">
+        <!--Each of these need descripotions pop-outs-->
+        <p></p>
+        <button id="elinebutton" type="button"></button>
+        <p></p>
+        <button id="elanbutton" type="button"></button>
+        <p></p>
+        <button id="eaccessbutton" type="button"></button>
+        <p></p>
+        <button id="internetbutton" type="button"></button>
+        <p></p>
+        <button id="voicebutton" type="button"></button>
+    </div>
+    <div class="stage">
+        <p></p>
+        <button id="evp" type="button">EVP</button>
+        <p></p>
+        <button id="ep" type="button">EP</button>
+    </div>
+    <div class="stage">
+        <!--Each of these need descripotions pop-outs especially the mappings. The DSCP and .1dpri mappings are derived from the service definition -->
+        <p></p>
+        <button id="perevcbutton" type="button"></button>
+        <p></p>
+        <button id="perpributton" type="button"></button>
+        <p></p>
+        <button id="perdscpbutton" type="button"></button>
+    </div>
+    <div id="deviceSelect" class="stage">
+        <div id="eLANsites">
+            <table cellpadding="0" cellspacing="0" border="0" id="elansitestable"></table>
+        </div>
+        <div id="eLinesites">
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="elinesitestable"></table>
+        </div>
+        <div id="eAccesssites">
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="eAccesssitestable"></table>
+        </div>
+        <div id="ePointsites">
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="epointsitestable"></table>
+        </div>
+        <p></p>
+        <table cellpadding="0" cellspacing="0" border="0" class="display" id="siteList"></table>
+        <p></p>
+    </div>
+    <div id="final" class="stage">
+        <div id="bwSelector">
+            <label for="bw-input">Choose Bandwidth</label>
+            <!--<input type="text" id="bw-input" list="bw-datalist" placeholder="1M"></input>-->
+            <select id="bw-datalist"></select>
+        </div>
+    </div>
+<div>
+<script type="text/javascript" src="../resources/js/script.js"></script>
+</div> 
+    <p></p>
+</div>
+   
+</body>
+
+</html>

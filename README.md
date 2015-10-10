@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/jgroom33/EthUI.git
 npm install connect serve-static
-node server.js
+nodejs server.js
 ```
 
 Browse to localhost:3000

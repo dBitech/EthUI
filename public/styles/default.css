@@ -69,7 +69,7 @@ button:active {
     width: 150px;
     height: 50px;
     background: #FFFFFF;
-    background-image: url(https://wiki.metroethernetforum.com/download/thumbnails/32248187/E-Line%20Service%20Type.png?version=1&modificationDate=1392365563000&api=v2);
+    background-image: url(../images/E-Line.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -80,7 +80,7 @@ button:active {
     width: 150px;
     height: 90px;
     background: #FFFFFF;
-    background-image: url(https://wiki.metroethernetforum.com/download/thumbnails/32248187/E-LAN%20Service%20Type.png?version=1&modificationDate=1392365587000&api=v2);
+    background-image: url(../images/E-LAN.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -91,7 +91,7 @@ button:active {
     width: 150px;
     height: 50px;
     background: #FFFFFF;
-    background-image: url(https://wiki.metroethernetforum.com/download/thumbnails/32248187/E-Access%20Service.png?version=1&modificationDate=1392361473000&api=v2);
+    background-image: url(../images/E-Access.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -103,7 +103,7 @@ button:active {
     width: 100px;
     height: 75px;
     background: #FFFFFF;
-    background-image: url(https://drive.google.com/uc?id=0B1qzFxuIA4mpSkRuYjdBSy1ZdGM);
+    background-image: url(../images/SIP.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -115,7 +115,7 @@ button:active {
     width: 100px;
     height: 100px;
     background: #FFFFFF;
-    background-image: url(https://drive.google.com/uc?id=0B1qzFxuIA4mpMEJuNXFMY3Uxa1U);
+    background-image: url(../images/internet.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -126,7 +126,7 @@ button:active {
     width: 150px;
     height: 80px;
     background: #FFFFFF;
-    background-image: url(https://drive.google.com/uc?id=0B1qzFxuIA4mpb2RyTEVRbC1mYlk);
+    background-image: url(../images/perEVC.PNG);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -137,7 +137,7 @@ button:active {
     width: 270px;
     height: 80px;
     background: #FFFFFF;
-    background-image: url(https://drive.google.com/uc?id=0B1qzFxuIA4mpM3BEZ1lxMGtMYms);
+    background-image: url(../images/perPRI.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;
@@ -148,7 +148,7 @@ button:active {
     width: 270px;
     height: 80px;
     background: #FFFFFF;
-    background-image: url(https://drive.google.com/uc?id=0B1qzFxuIA4mpbUVURGVGSzFaQ0U);
+    background-image: url(../images/perDSCP.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-size:contain;

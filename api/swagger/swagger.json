@@ -14,7 +14,6 @@
       "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
     }
   },
-  "host": "localhost:10010",
   "basePath": "/api",
   "schemes": ["http"],
   "consumes": ["application/json"],

@@ -5,7 +5,7 @@
 ```shell
 git clone https://github.com/jgroom33/EthUI.git
 npm install
-nodejs server.js
+swagger project start
 ```
 
 ###Web Page Provisioning

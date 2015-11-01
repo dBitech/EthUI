@@ -1,6 +1,6 @@
 # EthUI
 
-##This application provides a UI for provisioning an Ethernet service
+## This application provides a UI for provisioning an Ethernet service
 
 ```shell
 git clone https://github.com/jgroom33/EthUI.git
@@ -8,17 +8,17 @@ npm install
 swagger project start
 ```
 
-###Web Page Provisioning
+### Web Page Provisioning
 Browse to http://127.0.0.1:10010
 
-###Swagger UI
+### Swagger UI
 Browse to http://127.0.0.1:10010/docs
 
-###Direct URIs
+### Direct URIs
 Browse to http://127.0.0.1:10010/api/ethsvc
 Browse to http://127.0.0.1:10010/api/ethsvc/555
 
-###POST to
+### POST to
 http://127.0.0.1:10010/api/ethsvc
 ```json
 {

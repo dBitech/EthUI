@@ -5,9 +5,6 @@ var url = require('url');
 
 var Default = require('./DefaultService');
 
-
-
-
 module.exports.getEthSvc = function getEthSvc(req, res, next) {
 console.log('getEthSvc');
   var result = Default.getEthSvc();

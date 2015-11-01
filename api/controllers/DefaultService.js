@@ -30,7 +30,7 @@ exports.addEthSvc = function(service) {
   var examples = {};
 
   examples['application/json'] = service;
-
+console.log(examples);
   if(Object.keys(examples).length > 0)
     return examples[Object.keys(examples)[0]];
 

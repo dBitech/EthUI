@@ -9,7 +9,7 @@
   <script src="../resources/js/jquery-1.11.3.min.js"></script>
     <script src="../resources/js/jquery.dataTables.min.js"></script>
  </head>
- 
+
  <body>
 <div id="provisionContainer">
     <div id="proceed">
@@ -31,12 +31,8 @@
     <div id="start" class="stage">
         <div id="serviceProfileSelector">
             <label for="serviceProfile-input">Pick a Service Profile</label>
-            <input type="text" id="serviceProfile-input" list="serviceProfile-datalist" placeholder="e.g. EVPN"></input>
-            <datalist id="serviceProfile-datalist" class="stage1">
-                <option value="EVPN">EVPN</option>
-                <option value="ePipe">EVPN over SDH</option>
-                <option value="EVPN_EAN">EVPN over EAN</option>
-            </datalist>
+            <input type="text" id="serviceProfile-input" list="services-datalist" placeholder="e.g. Carrier Enternet"></input>
+            <datalist id="services-datalist" class="stage1"></datalist>
         </div>
         <div id="customerSelector">
             <label for="customer-input">Pick a Customer</label>
@@ -46,16 +42,29 @@
     </div>
     <div class="stage">
         <!--Each of these need descripotions pop-outs-->
-        <p></p>
-        <button id="elinebutton" type="button"></button>
-        <p></p>
-        <button id="elanbutton" type="button"></button>
-        <p></p>
-        <button id="eaccessbutton" type="button"></button>
-        <p></p>
-        <button id="internetbutton" type="button"></button>
-        <p></p>
-        <button id="voicebutton" type="button"></button>
+        <div id="service-enterprise">
+            <p></p>
+            <button id="internetbutton" type="button"></button>
+            <p></p>
+            <button id="voicebutton" type="button"></button>
+        </div>
+        <div id="service-carrier-ethernet">
+          <p></p>
+          <button id="elinebutton" type="button"></button>
+          <p></p>
+          <button id="elanbutton" type="button"></button>
+          <p></p>
+          <button id="eaccessbutton" type="button"></button>
+        </div>
+        <div id="service-unmanaged-ethernet">
+          <p></p>
+          <button id="elinebutton" type="button"></button>
+          <p></p>
+          <button id="elanbutton" type="button"></button>
+          <p></p>
+          <button id="eaccessbutton" type="button"></button>
+        </div>
+
     </div>
     <div class="stage">
         <p></p>
@@ -98,10 +107,10 @@
     </div>
 <div>
 <script type="text/javascript" src="../resources/js/script.js"></script>
-</div> 
+</div>
     <p></p>
 </div>
-   
+
 </body>
 
 </html>

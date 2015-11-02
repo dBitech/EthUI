@@ -7,6 +7,16 @@ $('#execute').hide();
 $('#start').show();
 //define the vars to be used each stage
 
+var simpleEth = new Object();
+var uni = new Array();
+var enni = new Array();
+simpleEth.uni = new Array();
+simpleEth.enni = new Array();
+simpleEth.uni[0] = new Object();
+simpleEth.uni[1] = new Object();
+
+simpleEth.enni[0] = new Object();
+
 var services = {
   "serviceID": [{
     "id": 1,
@@ -131,7 +141,7 @@ $(customers.custID).each(function(idx, o) {
 
 $(bw.bwvals).each(function(idx, o) {
   bwOption = "<option value=\"" + o.value + "\">" + o.text + "</option>";
-  $('#bw-datalist').append(bwOption);
+  $('#bw-input').append(bwOption);
 });
 $('#back').click(function() {
   $('.stage').each(function() {
@@ -165,8 +175,27 @@ $('#next').click(function() {
     }
   });
 });
+
+$('#evp').click(function() {
+  simpleEth.serviceType = "EVP";
+  $("#next").click();
+});
+
+$('#ep').click(function() {
+  simpleEth.serviceType = "EP";
+  $("#next").click();
+});
+
 $('#execute').click(function() {
-  alert('good luck!');
+  simpleEth.customer = $('#customer-input').val();
+  simpleEth.serviceProfile = $('#serviceProfile-input').val();
+  simpleEth.id = $('#serviceID').val();
+  simpleEth.bwAmount = $('#bw-input').val();
+
+  var SEobj = JSON.stringify(simpleEth, null, '    ');
+
+  var html = "<div><h3>Simple Ethernet Object Contents in JSON Format</h3></div><pre>" + SEobj + "</pre>";
+  $("#dialog-modal-content").html(html);
 });
 
 $('input[id=serviceProfile-input]').change(function() {
@@ -194,39 +223,48 @@ $('#elinebutton').click(function() {
   $('#eAccesssites').hide();
   $('#ePointsites').hide();
   $('#eLinesites').show();
+  $("#next").click();
+
 });
 $('#elanbutton').click(function() {
   $('#eLANsites').show();
   $('#eAccesssites').hide();
   $('#ePointsites').hide();
   $('#eLinesites').hide();
+  $("#next").click();
 });
 $('#eaccessbutton').click(function() {
   $('#eLANsites').hide();
   $('#eAccesssites').show();
   $('#ePointsites').hide();
   $('#eLinesites').hide();
+  $("#next").click();
+
 });
 $('#voicebutton').click(function() {
   $('#eLANsites').hide();
   $('#eAccesssites').hide();
   $('#ePointsites').show();
   $('#eLinesites').hide();
+  $("#next").click();
 });
 $('#internetbutton').click(function() {
   $('#eLANsites').hide();
   $('#eAccesssites').hide();
   $('#ePointsites').show();
   $('#eLinesites').hide();
+  $("#next").click();
 });
 //
+
 $('#elinesitestable').dataTable({
   "bLengthChange": false,
   "paging": false,
   "bFilter": false,
+  "ordering": false,
   "data": [
-    ['A Node', '', '<button class="addSite" type="button">Add</button>'],
-    ['Z Node', '', '<button class="addSite" type="button">Add</button>']
+    ['A Node', '', '<button class="addSiteA" type="button">Add</button>'],
+    ['Z Node', '', '<button class="addSiteZ" type="button">Add</button>']
   ],
   "columns": [{
     "title": "Site Type"
@@ -236,14 +274,75 @@ $('#elinesitestable').dataTable({
     "title": "Action"
   }]
 });
-var siteSelectTable = $('#elinesitestable').DataTable();
-$(".addSite").click(function() {
-  $(this).html('Remove');
-  var myrow = $(this).closest('tr').index();
-  var fromrow = siteListTable.row('.selected').index();
-  siteSelectTable.cell(myrow, 1).data(siteListTable.cell(fromrow, 4).data()).draw();
-  siteListTable.row('.selected').remove().draw(false);
+
+$('#eaccesssitestable').dataTable({
+  "bLengthChange": false,
+  "paging": false,
+  "bFilter": false,
+  "ordering": false,
+  "data": [
+    ['UNI Node', '', '<button class="addSiteeA" type="button">Add</button>'],
+    ['eNNI Node', '', '<button class="addSiteeE" type="button">Add</button>']
+  ],
+  "columns": [{
+    "title": "Site Type"
+  }, {
+    "title": "Site Name"
+  }, {
+    "title": "Action"
+  }]
 });
+
+var eAccesssiteSelectTable = $('#eaccesssitestable').DataTable();
+var eLinesiteSelectTable = $('#elinesitestable').DataTable();
+
+// Add sites for eLINE service
+$(".addSiteA").click(function() {
+  $(this).html('Added');
+  $(this).attr("disabled", true);
+  var pasterow = $(this).closest('tr').index();
+  var copyrow = siteListTable.row('.selected').index();
+  var id = siteListTable.cell(copyrow, 0).data();
+  eLinesiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
+  siteListTable.row('.selected').remove().draw(false);
+  // simpleEth.uni[0] = "test";
+  simpleEth.uni[0].id = id
+});
+
+$(".addSiteZ").click(function() {
+  $(this).html('Added');
+  $(this).attr("disabled", true);
+  var pasterow = $(this).closest('tr').index();
+  var copyrow = siteListTable.row('.selected').index();
+  var id = siteListTable.cell(copyrow, 0).data();
+  eLinesiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
+  siteListTable.row('.selected').remove().draw(false);
+  simpleEth.uni[1].id = id
+});
+
+//Add sites for eAccess service
+$(".addSiteeA").click(function() {
+  $(this).html('Added');
+  $(this).attr("disabled", true);
+  var pasterow = $(this).closest('tr').index();
+  var copyrow = siteListTable.row('.selected').index();
+  var id = siteListTable.cell(copyrow, 0).data();
+  eAccesssiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
+  siteListTable.row('.selected').remove().draw(false);
+  simpleEth.uni[0].id = id;
+});
+
+$(".addSiteeE").click(function() {
+  $(this).html('Added');
+  $(this).attr("disabled", true);
+  var pasterow = $(this).closest('tr').index();
+  var copyrow = siteListTable.row('.selected').index();
+  var id = siteListTable.cell(copyrow, 0).data();
+  eAccesssiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
+  siteListTable.row('.selected').remove().draw(false);
+  simpleEth.enni[0].id = id;
+});
+
 $('#siteList tbody').on('click', 'tr', function() {
   if ($(this).hasClass('selected')) {
     $(this).removeClass('selected');

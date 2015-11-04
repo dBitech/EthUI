@@ -22,20 +22,20 @@ Browse to http://127.0.0.1:10010/api/ethsvc/555
 http://127.0.0.1:10010/api/ethsvc
 ```json
 {
-  "id": 0,
+  "id": "test",
   "serviceType": "EP",
   "cos": "Gold",
-  "bwAmount": 1,
+  "bw": 1,
   "ennis": [
     {
-      "id": 0,
+      "id": "testenni",
       "ethertype": "88A8",
       "svid": "string"
     }
   ],
   "unis": [
     {
-      "id": 0
+      "id": "testuni"
     }
   ]
 }

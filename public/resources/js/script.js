@@ -7,29 +7,29 @@ $('#execute').hide();
 $('#start').show();
 //define the vars to be used each stage
 
-var simpleEth = new Object();
-var uni = new Array();
-var enni = new Array();
-simpleEth.uni = new Array();
-simpleEth.enni = new Array();
-simpleEth.uni[0] = new Object();
-simpleEth.uni[1] = new Object();
+var simpleEth = {};
+var uni = [];
+var enni = [];
+simpleEth.uni = [];
+simpleEth.enni =  [];
+simpleEth.uni[0] = {};
+simpleEth.uni[1] = {};
 
-simpleEth.enni[0] = new Object();
+simpleEth.enni[0] = {};
 
 var services = {
   "serviceID": [{
     "id": 1,
     "value": "Carrier Ethernet",
-    "text": "Carrier Ethernet",
+    "text": "Carrier Ethernet"
   }, {
     "id": 2,
     "value": "Enterprise",
-    "text": "Enterprise",
+    "text": "Enterprise"
   }, {
     "id": 3,
     "value": "unmonitored Ethernet",
-    "text": "unmonitored Ethernet",
+    "text": "unmonitored Ethernet"
   }]
 };
 
@@ -37,66 +37,66 @@ var customers = {
   "custID": [{
     "id": 1,
     "value": "ATT",
-    "text": "AT&T",
+    "text": "AT&T"
   }, {
     "id": 2,
     "value": "Vodafone",
-    "text": "Vodafone",
+    "text": "Vodafone"
   }, {
     "id": 3,
     "value": "MEF",
-    "text": "MEF Forum",
+    "text": "MEF Forum"
   }]
 };
 var bw = {
   "bwvals": [{
     "value": 1,
-    "text": "1M",
+    "text": "1M"
   }, {
     "value": 2,
-    "text": "2M",
+    "text": "2M"
   }, {
     "value": 3,
-    "text": "3M",
+    "text": "3M"
   }, {
     "value": 4,
-    "text": "4M",
+    "text": "4M"
   }, {
     "value": 5,
-    "text": "5M",
+    "text": "5M"
   }, {
     "value": 6,
-    "text": "6M",
+    "text": "6M"
   }, {
     "value": 7,
-    "text": "7M",
+    "text": "7M"
   }, {
     "value": 8,
-    "text": "8M",
+    "text": "8M"
   }, {
     "value": 9,
-    "text": "9M",
+    "text": "9M"
   }, {
     "value": 10,
-    "text": "10M",
+    "text": "10M"
   }, {
     "value": 20,
-    "text": "20M",
+    "text": "20M"
   }, {
     "value": 30,
-    "text": "30M",
+    "text": "30M"
   }, {
     "value": 40,
-    "text": "40M",
+    "text": "40M"
   }, {
     "value": 50,
-    "text": "50M",
+    "text": "50M"
   }, {
     "value": 60,
-    "text": "60M",
+    "text": "60M"
   }, {
     "value": 70,
-    "text": "70M",
+    "text": "70M"
   }]
 };
 var nodes = [
@@ -190,13 +190,31 @@ $('#execute').click(function() {
   simpleEth.customer = $('#customer-input').val();
   simpleEth.serviceProfile = $('#serviceProfile-input').val();
   simpleEth.id = $('#serviceID').val();
-  simpleEth.bwAmount = $('#bw-input').val();
+  simpleEth.bw = parseInt($('#bw-input').val());
 
   var SEobj = JSON.stringify(simpleEth, null, '    ');
 
+
+  $.ajax({
+    type: "POST",
+    url: "http://127.0.0.1:10010/api/ethsvc",
+    data: SEobj,
+    success: function(SEobj) {processPostResults(SEobj);},
+    contentType: "application/json",
+    accepts: "application/json"
+  });
+
   var html = "<div><h3>Simple Ethernet Object Contents in JSON Format</h3></div><pre>" + SEobj + "</pre>";
   $("#dialog-modal-content").html(html);
+
+
+
 });
+
+function processPostResults(fdf) {
+  console.log(fdf);
+}
+
 
 $('input[id=serviceProfile-input]').change(function() {
   var service = $('#serviceProfile-input').val();
@@ -343,7 +361,7 @@ $(".addSiteeE").click(function() {
   simpleEth.enni[0].id = id;
 });
 
-$('#siteList tbody').on('click', 'tr', function() {
+$('#siteList').find('tbody').on('click', 'tr', function() {
   if ($(this).hasClass('selected')) {
     $(this).removeClass('selected');
   } else {

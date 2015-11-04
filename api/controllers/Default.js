@@ -17,7 +17,7 @@ console.log('getEthSvc');
 };
 
 module.exports.addEthSvc = function addEthSvc(req, res, next) {
-console.log('addEthSvc');
+
   var service = req.swagger.params['Service'].value;
 
 

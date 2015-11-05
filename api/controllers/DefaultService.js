@@ -311,6 +311,42 @@ exports.addEthSvc = function (Ethsvc) {
         "state": "active"
     };
 
+
+
+
+    //    ['efab5761-490e-44ff-9e28-265bb28d8f35', 'Cane', 'CN 3916', '1', 'device 1 port 1'],
+    //    ['66fb6a5d-d19d-417a-a725-03c0c8f46288', 'Cane', 'CN 3916', '2', 'device 1 port 2'],
+    //    ['7456c1dd-d825-463d-bbeb-db2c3eefd749', 'Cane', 'CN 3916', '3', 'device 1 port 3'],
+    //    ['d6189bb8-4d48-4dda-ba92-b067775a6eb8', 'McCaw', 'CN 3916', '1', 'device 3 port 1'],
+    //    ['7e6d8d2e-1854-4d53-9df4-d2c36133dc0c', 'McCaw', 'CN 3916', '2', 'device 3 port 2'],
+    //    ['7d058082-bb09-416e-b5e6-73d30575620e', 'McCaw', 'CN 3916', '3', 'device 3 port 3']
+
+    switch(Ethsvc.uni[0].id) {
+        case 'efab5761-490e-44ff-9e28-265bb28d8f35':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        case '66fb6a5d-d19d-417a-a725-03c0c8f46288':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        case '7456c1dd-d825-463d-bbeb-db2c3eefd749':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        case 'd6189bb8-4d48-4dda-ba92-b067775a6eb8':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        case '7e6d8d2e-1854-4d53-9df4-d2c36133dc0c':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        case '7d058082-bb09-416e-b5e6-73d30575620e':
+            SCA_ETH_FDFr_EC.scaEthFppUniN[0].transportPort.Hostname = "10.10.10.10";
+            break;
+        default:
+        default code block
+    }
+
+    Ethsvc.uni[0].id
+
+    //Ethsvc.uni[1].id
     SCA_ETH_FDFr_EC.id = Ethsvc.id;
 //    SCA_ETH_FDFr_EC.scaEthFppUniN.transportPort.Hostname = Ethsvc.
 

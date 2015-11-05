@@ -100,13 +100,15 @@ var bw = {
   }]
 };
 var nodes = [
-  ['10.10.10.11', 'CHLG0103', 'CN 3916', '1', 'datacenter_p1'],
-  ['10.10.10.12', 'NTHS7362', 'CN 3930', '1', 'Site 1_p1'],
-  ['10.10.10.13', 'DNVR9372', 'CN 3916', '1', 'Site 2_p1'],
-  ['10.10.10.11', 'CHLG0103', 'CN 3930', '2', 'datacenter_p2'],
-  ['10.10.10.15', 'NTHS0904', 'CN 3916', '1', 'Site 3'],
-  ['10.10.10.13', 'NTHS9372', 'CN 3916', '3', 'Site 2_p2'],
-  ['10.10.10.17', 'ABCD1234', 'CN 3930', '1', 'Site 4']
+  ['efab5761-490e-44ff-9e28-265bb28d8f35', 'Cane', 'CN 3916', '1', 'device 1 port 1'],
+  ['66fb6a5d-d19d-417a-a725-03c0c8f46288', 'Cane', 'CN 3916', '2', 'device 1 port 2'],
+  ['7456c1dd-d825-463d-bbeb-db2c3eefd749', 'Cane', 'CN 3916', '3', 'device 1 port 3'],
+  ['38c80e33-50b5-4bf9-ab0e-dbb8e9f0a2a3', 'Read', 'CN 3916', '1', 'device 2 port 1'],
+  ['e9bf4ae6-fbb8-4f28-9010-9db17ee6b130', 'Read', 'CN 3916', '2', 'device 2 port 2'],
+  ['e9bf87ac-0e4d-4245-9ace-254aff88cf97', 'Read', 'CN 3916', '3', 'device 2 port 3'],
+  ['d6189bb8-4d48-4dda-ba92-b067775a6eb8', 'McCaw', 'CN 3916', '1', 'device 3 port 1'],
+  ['7e6d8d2e-1854-4d53-9df4-d2c36133dc0c', 'McCaw', 'CN 3916', '2', 'device 3 port 2'],
+  ['7d058082-bb09-416e-b5e6-73d30575620e', 'McCaw', 'CN 3916', '3', 'device 3 port 3']
 ];
 //header row for table
 $('#siteList').dataTable({

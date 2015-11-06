@@ -196,7 +196,7 @@ $('#execute').click(function() {
 
   $.ajax({
     type: "POST",
-    url: "http://localhost:10010/api/ethsvc",
+    url: "api/ethsvc",
     data: SEobj,
     success: function(SEobj) {processPostResults(SEobj);},
     contentType: "application/json",

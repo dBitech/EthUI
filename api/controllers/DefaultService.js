@@ -148,8 +148,8 @@ var zNode = "10.24.10.204";
                             "cosId": "string"
                         },
                         "ovcEndPtPerUniCfgCeVlanMap": {
-                            "CeVlanId": "string",
-                            "EvcId": "string"
+                            "CeVlanId": "",
+                            "EvcId": ""
                         },
                         "ovcEndPtPerUniCfgEgressBwp": {
                             "bwpCfgCbs": 0,
@@ -390,8 +390,8 @@ var zNode = "10.24.10.204";
                             "cosId": "string"
                         },
                         "ovcEndPtPerUniCfgCeVlanMap": {
-                            "CeVlanId": "string",
-                            "EvcId": "string"
+                            "CeVlanId": "",
+                            "EvcId": ""
                         },
                         "ovcEndPtPerUniCfgEgressBwp": {
                             "bwpCfgCbs": 0,
@@ -621,8 +621,6 @@ exports.addEthSvc = function (Ethsvc) {
 
     // UNI Params
     //FDF.SCA_ETH_Flow_Points
-    FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.CeVlanId = "";
-    FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.EvcId = "";
     FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.allToOneBundling = "true";
     switch(Ethsvc.uni[0].id) {
         case 'efab5761-490e-44ff-9e28-265bb28d8f35':

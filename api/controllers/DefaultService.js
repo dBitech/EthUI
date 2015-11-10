@@ -6,6 +6,10 @@ var controllerLocation = 'http://localhost:8080/hacker/api/mef/sca/v1/SCA_ETH_FD
 var aNode = "10.24.10.203";
 var iNode = "10.24.10.202";
 var zNode = "10.24.10.204";
+var aNodeINNI = '6';
+var zNodeINNI = '6';
+var iNodeaINNI = '6';
+var iNodezINNI = '5';
 
     var SCA_ETH_FDFr_EC = {
         "SCA_ETH_Flow_Points": [
@@ -607,14 +611,14 @@ exports.addEthSvc = function (Ethsvc) {
     // INNI Params
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = aNode;
-    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = "6";
+    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = aNodeINNI;
     FDF.SCA_ETH_IVC_End_Points[0].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[0].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[0].tpid = "";
 
     FDF.SCA_ETH_IVC_End_Points[1].interfaceDescription = "Inni2";
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Hostname = zNode;
-    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = "6";
+    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = zNodeINNI;
     FDF.SCA_ETH_IVC_End_Points[1].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[1].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[1].tpid = "";
@@ -730,14 +734,14 @@ function setupIntermediateNode(fdf, myvlan) {
     // INNI Params
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = iNode;
-    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = "6";
+    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = iNodeaINNI;
     FDF.SCA_ETH_IVC_End_Points[0].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[0].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[0].tpid = "";
 
     FDF.SCA_ETH_IVC_End_Points[1].interfaceDescription = "Inni2";
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Hostname = iNode;
-    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = "5";
+    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = iNodezINNI;
     FDF.SCA_ETH_IVC_End_Points[1].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[1].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[1].tpid = "";

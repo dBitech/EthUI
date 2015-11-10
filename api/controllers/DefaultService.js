@@ -559,7 +559,7 @@ var iNodezINNI = '5';
         "id": "string",
         "state": "active"
     };
-    
+
 exports.getEthSvc = function () {
 
     var examples = {};
@@ -717,32 +717,32 @@ exports.addEthSvc = function (Ethsvc) {
             //loop through SCA_ETH_Flow_Points[]
             //copy SCA_ETH_Flow_Points[].id into uni id
             console.log(response.body);
-            setupIntermediateNode(response.body, myvlan);
+            setupIntermediateNode(response.body);
         });
 
 }
 
-function setupIntermediateNode(fdf, myvlan) {
+function setupIntermediateNode(fdf) {
     var FDF = JSON.parse(JSON.stringify(SCA_ETH_FDFr_EC));
     FDF.SCA_ETH_Flow_Points = [];
     
     FDF.id = fdf.id + "_iNode";
     FDF.state = "active";
     FDF.evcCfgMtuSize = 1522;
-    FDF.evcCfgIdentifier = fdf.id + "_iNode";
+    FDF.evcCfgIdentifier = fdf.evcCfgIdentifier;
     FDF.evcStatusMaxNumUni = 1;
     // INNI Params
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = iNode;
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = iNodeaINNI;
-    FDF.SCA_ETH_IVC_End_Points[0].stag = myvlan;
+    FDF.SCA_ETH_IVC_End_Points[0].stag = fdf.SCA_ETH_IVC_End_Points[0].stag;
     FDF.SCA_ETH_IVC_End_Points[0].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[0].tpid = "";
 
     FDF.SCA_ETH_IVC_End_Points[1].interfaceDescription = "Inni2";
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Hostname = iNode;
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = iNodezINNI;
-    FDF.SCA_ETH_IVC_End_Points[1].stag = myvlan;
+    FDF.SCA_ETH_IVC_End_Points[1].stag = fdf.SCA_ETH_IVC_End_Points[1].stag;
     FDF.SCA_ETH_IVC_End_Points[1].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[1].tpid = "";
 

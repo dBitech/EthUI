@@ -604,13 +604,21 @@ exports.addEthSvc = function (Ethsvc) {
     var myvlan = Math.floor(Math.random() * 3899) + 20;
 
     var FDF = JSON.parse(JSON.stringify(SCA_ETH_FDFr_EC));
-    
+
+    // Top level commands
     FDF.id = Ethsvc.id + "_fdf1";
     FDF.flowDomainId = Ethsvc.id;
     FDF.state = "active";
     FDF.evcCfgMtuSize = 1522;
     FDF.evcCfgIdentifier = Ethsvc.id;
     FDF.evcStatusMaxNumUni = 1;
+
+    // UNI Params for BW
+    FDF.SCA_ETH_Flow_Points[1].ingressBandwidthProfilePerEvc.bwpCfgCir = Ethsvc.bw*1000;
+    FDF.SCA_ETH_Flow_Points[1].ingressBandwidthProfilePerEvc.bwpCfgCbs = Math.round(Ethsvc.bw*1000/60);
+    FDF.SCA_ETH_Flow_Points[0].ingressBandwidthProfilePerEvc.bwpCfgCir = Ethsvc.bw*1000;
+    FDF.SCA_ETH_Flow_Points[0].ingressBandwidthProfilePerEvc.bwpCfgCbs = Math.round(Ethsvc.bw*1000/60);
+
     // INNI Params
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = aNode;

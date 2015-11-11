@@ -118,7 +118,7 @@ var SCA_ETH_FDFr_EC = {
       "scaEthFppUniN": {
         "allToOneBundling": "string",
         "bundling": "string",
-        "ceVlanId": "string",
+        "ceVlanId": "",
         "eLMI": "string",
         "ethOvcEndPoint": {
           "cosCfgDscp": {
@@ -153,7 +153,251 @@ var SCA_ETH_FDFr_EC = {
             "cosId": "string"
           },
           "ovcEndPtPerUniCfgCeVlanMap": {
-            "CeVlanId": "string",
+            "CeVlanId": "",
+            "EvcId": "string"
+          },
+          "ovcEndPtPerUniCfgEgressBwp": {
+            "bwpCfgCbs": 0,
+            "bwpCfgCf": "string",
+            "bwpCfgCir": 0,
+            "bwpCfgCm": "string",
+            "bwpCfgEbs": 0,
+            "bwpCfgEir": 0
+          },
+          "ovcEndPtPerUniCfgIdentifier": "string",
+          "ovcEndPtPerUniCfgIngressBwp": {
+            "bwpCfgCbs": 0,
+            "bwpCfgCf": "string",
+            "bwpCfgCir": 0,
+            "bwpCfgCm": "string",
+            "bwpCfgEbs": 0,
+            "bwpCfgEir": 0
+          },
+          "ovcEndPtPerUniCfgRole": "string"
+        },
+        "evcId": "string",
+        "frameFormat": "string",
+        "interfaceCfgEgressBwp": {
+          "BwpCfgCm": "string",
+          "BwpCfgEir": 0,
+          "bwpCfgCbs": 0,
+          "bwpCfgCf": "string",
+          "bwpCfgCir": 0,
+          "bwpCfgCirMax": 0,
+          "bwpCfgEbs": 0,
+          "bwpCfgEirMax": 0,
+          "bwpCfgIdentifier": "string",
+          "envelopeId": "string",
+          "rank": "string"
+        },
+        "interfaceCfgIdentifier": "string",
+        "interfaceCfgIngressBwp": {
+          "bwpCfgCbs": 0,
+          "bwpCfgCf": "string",
+          "bwpCfgCir": 0,
+          "bwpCfgCirMax": 0,
+          "bwpCfgCm": "string",
+          "bwpCfgEbs": 0,
+          "bwpCfgEir": 0,
+          "bwpCfgEirMax": 0,
+          "bwpCfgIdentifier": "string",
+          "envelopeId": "string",
+          "rank": "string"
+        },
+        "interfaceStatusMaxVc": 0,
+        "linkOam": "string",
+        "multiplexing": "string",
+        "numberOfLinks": 0,
+        "physicalLayer": "string",
+        "physicalLayerDuplexMode": "string",
+        "synchronousMode": "string",
+        "transportPort": {
+          "CLLI": "string",
+          "Hostname": "string",
+          "Port": "string",
+          "Rack": "string",
+          "RemoteUnit": "string",
+          "RemoteUnitPort": "string",
+          "RemoteUnitSlot": "string",
+          "Shelf": "string",
+          "Slot": "string",
+          "Subslot": "string",
+          "Vendor": "string",
+          "href": "string"
+        },
+        "uniCfgCePriorityUntagged": 0,
+        "uniCfgCeVidUntagged": 0,
+        "uniL2cpServiceAttributes": {
+          "uniL2cpPeering": {
+            "l2cpDestinationAddress": "string",
+            "linkIdentifier": "string",
+            "protocolIdentifier": {
+              "Ethertype": "string",
+              "Subtypes": "string"
+            },
+            "protocolToBePeered": "string"
+          },
+          "unilL2cpAddressSet": {
+            "assignment8021Q": "string",
+            "filteredBy": {
+              "CTA": true,
+              "CTB": true,
+              "CTB2": true
+            },
+            "l2cpDestinationAddress": "string"
+          }
+        },
+        "uniMaximumServiceFrameSize": 0,
+        "uniMeg": "string",
+        "uniResiliency": "string"
+      },
+      "sourceMacAddressLimit": "string",
+      "sourceMacAddressLimitN": 0,
+      "sourceMacAddressLimitT": 0,
+      "subscriberMegMip": "string",
+      "testMeg": "string"
+    },
+    {
+      "classOfServiceIdentifierEvc": {
+        "classOfServiceName": "string",
+        "evc": "string"
+      },
+      "classOfServiceIdentifierIp": {
+        "classOfServiceName": "string",
+        "ipv4": "string",
+        "ipv6": "string"
+      },
+      "classOfServiceIdentifierL2CP": {
+        "L2cpEvcGrpEntry": "string",
+        "classOfServiceName": "string"
+      },
+      "classOfServiceIdentifierPcp": {
+        "classOfServiceName": "string",
+        "cosId": "string"
+      },
+      "classOfServiceIdentifierSOAM": {
+        "classOfServiceName": "string"
+      },
+      "colorIdentifier": {
+        "colorIdentifierBasedOnEvc": {
+          "color": "string",
+          "evcId": "string"
+        }
+      },
+      "egressBandwidthProfilePerEgressEquivalenceClassIdentifier": {
+        "bwpCfgCbs": 0,
+        "bwpCfgCf": "string",
+        "bwpCfgCir": 0,
+        "bwpCfgCirMax": 0,
+        "bwpCfgCm": "string",
+        "bwpCfgEbs": 0,
+        "bwpCfgEir": 0,
+        "bwpCfgEirMax": 0,
+        "bwpCfgIdentifier": "string",
+        "coS": "string",
+        "envelopeId": "string",
+        "rank": "string"
+      },
+      "egressBandwidthProfilePerEvc": {
+        "bwpCfgCbs": 0,
+        "bwpCfgCf": "string",
+        "bwpCfgCir": 0,
+        "bwpCfgCirMax": 0,
+        "bwpCfgCm": "string",
+        "bwpCfgEbs": 0,
+        "bwpCfgEir": 0,
+        "bwpCfgEirMax": 0,
+        "bwpCfgIdentifier": "string",
+        "envelopeId": "string",
+        "rank": "string"
+      },
+      "egressEquivalenceClassIdentifierCos": {
+        "cosId": "string",
+        "egressEquivalenceClass": "string"
+      },
+      "egressEquivalenceClassIdentifierEvc": {
+        "egressEquivalenceClass": "string",
+        "evc": "string"
+      },
+      "egressEquivalenceClassIdentifierIp": {
+        "egressEquivalenceClass": "string",
+        "ipv4": "string",
+        "ipv6": "string"
+      },
+      "egressEquivalenceClassIdentifierL2CP": {
+        "L2cpEvcGrpEntry": "string",
+        "egressEquivalenceClass": "string"
+      },
+      "egressEquivalenceClassIdentifierSOAM": {
+        "egressEquivalenceClass": "string"
+      },
+      "evcPerUniCfgIdentifier": "string",
+      "ingressBandwidthProfilePerClassOfServiceIdentifier": {
+        "BwpCfgEbs": 0,
+        "bwpCfgCbs": 0,
+        "bwpCfgCf": "string",
+        "bwpCfgCir": 0,
+        "bwpCfgCirMax": 0,
+        "bwpCfgCm": "string",
+        "bwpCfgEir": 0,
+        "bwpCfgEirMax": 0,
+        "bwpCfgIdentifier": "string",
+        "coS": "string",
+        "envelopeId": "string",
+        "rank": "string"
+      },
+      "ingressBandwidthProfilePerEvc": {
+        "bwpCfgCbs": 0,
+        "bwpCfgCf": "string",
+        "bwpCfgCir": 0,
+        "bwpCfgCirMax": 0,
+        "bwpCfgCm": "string",
+        "bwpCfgEbs": 0,
+        "bwpCfgEir": 0,
+        "bwpCfgEirMax": 0,
+        "bwpCfgIdentifier": "string",
+        "envelopeId": "string",
+        "rank": "string"
+      },
+      "scaEthFppUniN": {
+        "allToOneBundling": "string",
+        "bundling": "string",
+        "ceVlanId": "",
+        "eLMI": "string",
+        "ethOvcEndPoint": {
+          "cosCfgDscp": {
+            "classOfServiceName": "string",
+            "ipv4": "string",
+            "ipv6": "string"
+          },
+          "cosCfgOvcEp": {
+            "classOfServiceName": "string",
+            "ovc": "string"
+          },
+          "cosCfgPcp": {
+            "classOfServiceName": "string",
+            "cosId": "string"
+          },
+          "ovcEndPtPerCosCfgEgressBwp": {
+            "bwpCfgCbs": 0,
+            "bwpCfgCf": "string",
+            "bwpCfgCir": 0,
+            "bwpCfgCm": "string",
+            "bwpCfgEbs": 0,
+            "bwpCfgEir": 0,
+            "cosId": "string"
+          },
+          "ovcEndPtPerCosCfgIngressBwp": {
+            "bwpCfgCbs": 0,
+            "bwpCfgCf": "string",
+            "bwpCfgCir": 0,
+            "bwpCfgCm": "string",
+            "bwpCfgEbs": 0,
+            "bwpCfgEir": 0,
+            "cosId": "string"
+          },
+          "ovcEndPtPerUniCfgCeVlanMap": {
+            "CeVlanId": "",
             "EvcId": "string"
           },
           "ovcEndPtPerUniCfgEgressBwp": {
@@ -283,7 +527,32 @@ var SCA_ETH_FDFr_EC = {
       "speed": "string",
       "stag": "string",
       "tpid": "string"
-    }
+    },
+    {
+      "interfaceDescription": "string",
+      "mtu": "string",
+      "scaEthFppInniN": {
+        "interfaceDescription": "string",
+        "mtu": "string",
+        "speed": "string",
+        "transport": {
+          "CLLI": "string",
+          "Hostname": "string",
+          "Port": "string",
+          "Rack": "string",
+          "RemoteUnit": "string",
+          "RemoteUnitPort": "string",
+          "RemoteUnitSlot": "string",
+          "Shelf": "string",
+          "Slot": "string",
+          "Subslot": "string",
+          "Vendor": "string"
+        }
+      },
+      "speed": "string",
+      "stag": "string",
+      "tpid": "string"
+    }    
   ],
   "evcCfgCeVlanCosPreservation": "Enabled",
   "evcCfgCeVlanIdPreservation": "Enabled",
@@ -333,10 +602,7 @@ exports.addEthSvc = function (Ethsvc) {
 
 
     var myvlan = Math.floor(Math.random() * 3899) + 20;
-    //Ethsvc.uni[1].id
-    //EVC Params
-    
-    console.log("aNode: " + aNode + ", iNode: " + iNode + ", zNode: " + zNode);
+
     var FDF = JSON.parse(JSON.stringify(SCA_ETH_FDFr_EC));
     
     FDF.id = Ethsvc.id + "_fdf1";
@@ -403,7 +669,6 @@ exports.addEthSvc = function (Ethsvc) {
 
     switch(Ethsvc.uni[1].id) {
         case 'efab5761-490e-44ff-9e28-265bb28d8f35':
-            evcPerUniCfgIdentifier
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "efab5761-490e-44ff-9e28-265bb28d8f35";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "1";
@@ -435,14 +700,6 @@ exports.addEthSvc = function (Ethsvc) {
             break;
     };
 
-
-
-
-
-
-
-
-
     console.log(FDF);
 
     unirest.post(controllerLocation)
@@ -463,7 +720,7 @@ function setupIntermediateNode(fdf) {
     var FDF = JSON.parse(JSON.stringify(SCA_ETH_FDFr_EC));
     FDF.SCA_ETH_Flow_Points = [];
     
-    FDF.id = fdf.id + "_fdf2";
+    FDF.id = fdf.evcCfgIdentifier + "_fdf2";
     FDF.flowDomainId = fdf.id;
     FDF.state = "active";
     FDF.evcCfgMtuSize = 1522;

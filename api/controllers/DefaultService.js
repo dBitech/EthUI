@@ -3,13 +3,13 @@
 // global variables
 var unirest = require('unirest');
 var controllerLocation = 'http://localhost:8080/hacker/api/mef/sca/v1/SCA_ETH_FDFr_EC';
-var aNode = "10.24.10.203";
-var iNode = "10.24.10.202";
-var zNode = "10.24.10.204";
+var aNode = "10.24.10.60";
+var iNode = "10.24.10.61";
+var zNode = "10.24.10.62";
 var aNodeINNI = '6';
 var zNodeINNI = '6';
-var iNodeaINNI = '6';
-var iNodezINNI = '5';
+var iNodeaINNI = '5';
+var iNodezINNI = '6';
 
 var SCA_ETH_FDFr_EC = {
   "SCA_ETH_Flow_Points": [

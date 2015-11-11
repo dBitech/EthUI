@@ -100,21 +100,42 @@ var bw = {
   }]
 };
 var nodes = [
-  ['efab5761-490e-44ff-9e28-265bb28d8f35', 'Cane', 'CN 3916', '1', 'device 1 port 1'],
-  ['66fb6a5d-d19d-417a-a725-03c0c8f46288', 'Cane', 'CN 3916', '2', 'device 1 port 2'],
-  ['7456c1dd-d825-463d-bbeb-db2c3eefd749', 'Cane', 'CN 3916', '3', 'device 1 port 3'],
-  ['d6189bb8-4d48-4dda-ba92-b067775a6eb8', 'McCaw', 'CN 3916', '1', 'device 3 port 1'],
-  ['7e6d8d2e-1854-4d53-9df4-d2c36133dc0c', 'McCaw', 'CN 3916', '2', 'device 3 port 2'],
-  ['7d058082-bb09-416e-b5e6-73d30575620e', 'McCaw', 'CN 3916', '3', 'device 3 port 3']
+  ['efab5761-490e-44ff-9e28-265bb28d8f35', 'ATT', 'Cane', 'CN 3916', '1', 'device 1 port 1'],
+  ['66fb6a5d-d19d-417a-a725-03c0c8f46288', 'Vodafone', 'Cane', 'CN 3916', '2', 'device 1 port 2'],
+  ['7456c1dd-d825-463d-bbeb-db2c3eefd749', 'MEF', 'Cane', 'CN 3916', '3', 'device 1 port 3'],
+  ['d6189bb8-4d48-4dda-ba92-b067775a6eb8', 'ATT', 'McCaw', 'CN 3916', '1', 'device 3 port 1'],
+  ['7e6d8d2e-1854-4d53-9df4-d2c36133dc0c', 'Vodafone', 'McCaw', 'CN 3916', '2', 'device 3 port 2'],
+  ['7d058082-bb09-416e-b5e6-73d30575620e', 'MEF', 'Cane', 'CN 3916', '3', 'device 3 port 3']
 ];
+
+var customerNodes = new Object();
+customerNodes['ATT'] = new Array();
+customerNodes['Vodafone'] = new Array();
+customerNodes['MEF'] = new Array();
+
+$.each(nodes, function(index, value) {
+    var cNode = new Object();   
+    cNode.id = value[0];
+    cNode.customer = value[1];
+    cNode.sysName = value[2];
+    cNode.deviceType = value[3];
+    cNode.port = value[4];
+    cNode.desc = value[5];
+    
+    customerNodes[cNode.customer].push(cNode);
+ 
+});
+
 //header row for table
-$('#siteList').dataTable({
+siteListTable = $('#siteList').dataTable({
   "bLengthChange": false,
   "paging": false,
   "data": nodes,
   "columns": [{
-    "title": "IP"
+    "title": "ID"
   }, {
+    "title": "Customer"
+  },{
     "title": "Sysname"
   }, {
     "title": "Device Type"
@@ -126,7 +147,15 @@ $('#siteList').dataTable({
     "class": "center"
   }]
 });
-var siteListTable = $('#siteList').DataTable();
+
+$('#customer-input').change(function(){
+    siteListTable.dataTable().fnClearTable();
+    var nodes = customerNodes[$('#customer-input').val()];
+    
+    $.each(nodes, function(index, node) {
+        siteListTable.dataTable().fnAddData([node.id, node.customer, node.sysName, node.deviceType, node.port, node.desc]);
+    });
+});
 
 $(services.serviceID).each(function(idx, o) {
   custOption = "<option value=\"" + o.value + "\">" + o.text + "</option>";

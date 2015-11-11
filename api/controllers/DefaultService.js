@@ -615,6 +615,7 @@ exports.addEthSvc = function (Ethsvc) {
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = aNode;
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = aNodeINNI;
+    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Vendor = "CN 3916";
     FDF.SCA_ETH_IVC_End_Points[0].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[0].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[0].tpid = "";
@@ -622,6 +623,7 @@ exports.addEthSvc = function (Ethsvc) {
     FDF.SCA_ETH_IVC_End_Points[1].interfaceDescription = "Inni2";
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Hostname = zNode;
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = zNodeINNI;
+    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Vendor = "CN 3916";
     FDF.SCA_ETH_IVC_End_Points[1].stag = myvlan;
     FDF.SCA_ETH_IVC_End_Points[1].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[1].tpid = "";
@@ -635,31 +637,37 @@ exports.addEthSvc = function (Ethsvc) {
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "efab5761-490e-44ff-9e28-265bb28d8f35";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "1";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '66fb6a5d-d19d-417a-a725-03c0c8f46288':
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "66fb6a5d-d19d-417a-a725-03c0c8f46288";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "2";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7456c1dd-d825-463d-bbeb-db2c3eefd749':
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "7456c1dd-d825-463d-bbeb-db2c3eefd749";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "3";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case 'd6189bb8-4d48-4dda-ba92-b067775a6eb8':
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "d6189bb8-4d48-4dda-ba92-b067775a6eb8";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "1";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7e6d8d2e-1854-4d53-9df4-d2c36133dc0c':
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "7e6d8d2e-1854-4d53-9df4-d2c36133dc0c";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "2";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7d058082-bb09-416e-b5e6-73d30575620e':
             FDF.SCA_ETH_Flow_Points[0].evcPerUniCfgIdentifier = "7d058082-bb09-416e-b5e6-73d30575620e";
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Port = "3";
+            FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
     };
 
@@ -672,31 +680,37 @@ exports.addEthSvc = function (Ethsvc) {
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "efab5761-490e-44ff-9e28-265bb28d8f35";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "1";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '66fb6a5d-d19d-417a-a725-03c0c8f46288':
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "66fb6a5d-d19d-417a-a725-03c0c8f46288";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "2";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7456c1dd-d825-463d-bbeb-db2c3eefd749':
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "7456c1dd-d825-463d-bbeb-db2c3eefd749";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = aNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "3";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case 'd6189bb8-4d48-4dda-ba92-b067775a6eb8':
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "d6189bb8-4d48-4dda-ba92-b067775a6eb8";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "1";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7e6d8d2e-1854-4d53-9df4-d2c36133dc0c':
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "7e6d8d2e-1854-4d53-9df4-d2c36133dc0c";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "2";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
         case '7d058082-bb09-416e-b5e6-73d30575620e':
             FDF.SCA_ETH_Flow_Points[1].evcPerUniCfgIdentifier = "7d058082-bb09-416e-b5e6-73d30575620e";
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Hostname = zNode;
             FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Port = "3";
+            FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.transportPort.Vendor = "CN 3916";
             break;
     };
 
@@ -730,6 +744,7 @@ function setupIntermediateNode(fdf) {
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Hostname = iNode;
     FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Port = iNodeaINNI;
+    FDF.SCA_ETH_IVC_End_Points[0].scaEthFppInniN.transport.Vendor = "CN 3916";
     FDF.SCA_ETH_IVC_End_Points[0].stag = fdf.SCA_ETH_IVC_End_Points[0].stag;
     FDF.SCA_ETH_IVC_End_Points[0].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[0].tpid = "";
@@ -737,6 +752,7 @@ function setupIntermediateNode(fdf) {
     FDF.SCA_ETH_IVC_End_Points[1].interfaceDescription = "Inni2";
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Hostname = iNode;
     FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Port = iNodezINNI;
+    FDF.SCA_ETH_IVC_End_Points[1].scaEthFppInniN.transport.Vendor = "CN 3916";
     FDF.SCA_ETH_IVC_End_Points[1].stag = fdf.SCA_ETH_IVC_End_Points[1].stag;
     FDF.SCA_ETH_IVC_End_Points[1].mtu = "9600";
     FDF.SCA_ETH_IVC_End_Points[1].tpid = "";

@@ -721,7 +721,7 @@ function setupIntermediateNode(fdf) {
     FDF.SCA_ETH_Flow_Points = [];
     
     FDF.id = fdf.evcCfgIdentifier + "_fdf2";
-    FDF.flowDomainId = fdf.id;
+    FDF.flowDomainId = fdf.evcCfgIdentifier;
     FDF.state = "active";
     FDF.evcCfgMtuSize = 1522;
     FDF.evcCfgIdentifier = fdf.evcCfgIdentifier;

@@ -347,22 +347,30 @@ $(".addSiteA").click(function() {
   $(this).html('Added');
   $(this).attr("disabled", true);
   var pasterow = $(this).closest('tr').index();
-  var copyrow = siteListTable.row('.selected').index();
-  var id = siteListTable.cell(copyrow, 0).data();
-  eLinesiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
-  siteListTable.row('.selected').remove().draw(false);
-  // simpleEth.uni[0] = "test";
+  var copyrow = siteListTable.DataTable().row().index() - 1;
+  var copydata = siteListTable.DataTable().row().data();
+  var cellContents = copydata[2] + " " + copydata[5];
+  var id = copydata[0];
+  
+  eLinesiteSelectTable.cell(pasterow, 1).data(cellContents).draw();
+  siteListTable.DataTable().row().remove().draw();
+
   simpleEth.uni[0].id = id
 });
 
 $(".addSiteZ").click(function() {
   $(this).html('Added');
   $(this).attr("disabled", true);
+
   var pasterow = $(this).closest('tr').index();
-  var copyrow = siteListTable.row('.selected').index();
-  var id = siteListTable.cell(copyrow, 0).data();
-  eLinesiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
-  siteListTable.row('.selected').remove().draw(false);
+  var copyrow = siteListTable.DataTable().row().index() - 1;
+  var copydata = siteListTable.DataTable().row().data();
+  var cellContents = copydata[2] + " " + copydata[5];
+  var id = copydata[0];
+  
+  eLinesiteSelectTable.cell(pasterow, 1).data(cellContents).draw();
+  siteListTable.DataTable().row().remove().draw();
+
   simpleEth.uni[1].id = id
 });
 
@@ -371,7 +379,7 @@ $(".addSiteeA").click(function() {
   $(this).html('Added');
   $(this).attr("disabled", true);
   var pasterow = $(this).closest('tr').index();
-  var copyrow = siteListTable.row('.selected').index();
+  var copyrow = $("#siteListTable tr.selected").index();
   var id = siteListTable.cell(copyrow, 0).data();
   eAccesssiteSelectTable.cell(pasterow, 1).data(siteListTable.cell(copyrow, 4).data()).draw();
   siteListTable.row('.selected').remove().draw(false);

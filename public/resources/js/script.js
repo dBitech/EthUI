@@ -226,11 +226,25 @@ $('#next').click(function() {
 
 $('#evp').click(function() {
   simpleEth.serviceType = "EVP";
+  // Get the column API object
+  var column1 = eAccesssiteSelectTable.column(2 );
+  var column2 = eLinesiteSelectTable.column(2 );
+  // set the visibility
+  column1.visible(true);
+  column2.visible(true);
+
   $("#next").click();
 });
 
 $('#ep').click(function() {
   simpleEth.serviceType = "EP";
+  // Get the column API object
+  var column1 = eAccesssiteSelectTable.column(2 );
+  var column2 = eLinesiteSelectTable.column( 2 );
+  // set the visibility
+  column1.visible(false);
+  column2.visible(false);
+
   $("#next").click();
 });
 
@@ -329,13 +343,15 @@ $('#elinesitestable').dataTable({
   "bFilter": false,
   "ordering": false,
   "data": [
-    ['A Node', '', '<button class="addSiteA" type="button">Add</button>'],
-    ['Z Node', '', '<button class="addSiteZ" type="button">Add</button>']
+    ['A Node', '', '', '<button class="addSiteA" type="button">Add</button>'],
+    ['Z Node', '', '', '<button class="addSiteZ" type="button">Add</button>']
   ],
   "columns": [{
     "title": "Site Type"
   }, {
     "title": "Site Name"
+  }, {
+    "title": "CVID"
   }, {
     "title": "Action"
   }]
@@ -347,13 +363,15 @@ $('#eaccesssitestable').dataTable({
   "bFilter": false,
   "ordering": false,
   "data": [
-    ['UNI Node', '', '<button class="addSiteeA" type="button">Add</button>'],
-    ['eNNI Node', '', '<button class="addSiteeE" type="button">Add</button>']
+    ['UNI Node', '', '', '<button class="addSiteeA" type="button">Add</button>'],
+    ['eNNI Node', '', '', '<button class="addSiteeE" type="button">Add</button>']
   ],
   "columns": [{
     "title": "Site Type"
   }, {
     "title": "Site Name"
+  }, {
+    "title": "CVID"
   }, {
     "title": "Action"
   }]

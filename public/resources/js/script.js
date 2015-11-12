@@ -46,6 +46,10 @@ var customers = {
     "id": 3,
     "value": "MEF",
     "text": "MEF Forum"
+  }, {
+    "id": 4,
+    "value": "admin",
+    "text": "admin"
   }]
 };
 var bw = {
@@ -149,12 +153,28 @@ siteListTable = $('#siteList').dataTable({
 });
 
 $('#customer-input').change(function(){
-    siteListTable.dataTable().fnClearTable();
-    var nodes = customerNodes[$('#customer-input').val()];
-    
-    $.each(nodes, function(index, node) {
+  siteListTable.dataTable().fnClearTable();
+    var cust = $('#customer-input').val();
+    if(cust == 'admin'){
+      nodes = customerNodes["ATT"];
+      $.each(nodes, function(index, node) {
         siteListTable.dataTable().fnAddData([node.id, node.customer, node.sysName, node.deviceType, node.port, node.desc]);
-    });
+      });
+      nodes = customerNodes['MEF'];
+      $.each(nodes, function(index, node) {
+        siteListTable.dataTable().fnAddData([node.id, node.customer, node.sysName, node.deviceType, node.port, node.desc]);
+      });
+      nodes = customerNodes['Vodafone'];
+      $.each(nodes, function(index, node) {
+        siteListTable.dataTable().fnAddData([node.id, node.customer, node.sysName, node.deviceType, node.port, node.desc]);
+      });
+    }else {
+      var nodes = customerNodes[$('#customer-input').val()];
+      $.each(nodes, function(index, node) {
+        siteListTable.dataTable().fnAddData([node.id, node.customer, node.sysName, node.deviceType, node.port, node.desc]);
+      });
+    }
+
 });
 
 $(services.serviceID).each(function(idx, o) {
@@ -347,7 +367,6 @@ $(".addSiteA").click(function() {
   $(this).html('Added');
   $(this).attr("disabled", true);
   var pasterow = $(this).closest('tr').index();
-  var copyrow = siteListTable.DataTable().row().index() - 1;
   var copydata = siteListTable.DataTable().row().data();
   var cellContents = copydata[2] + " " + copydata[5];
   var id = copydata[0];
@@ -363,7 +382,6 @@ $(".addSiteZ").click(function() {
   $(this).attr("disabled", true);
 
   var pasterow = $(this).closest('tr').index();
-  var copyrow = siteListTable.DataTable().row().index() - 1;
   var copydata = siteListTable.DataTable().row().data();
   var cellContents = copydata[2] + " " + copydata[5];
   var id = copydata[0];

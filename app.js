@@ -43,8 +43,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     app.use(middleware.swaggerUi());
 
     // Start the server
-    http.createServer(app).listen(10010, function () {
-        console.log('http://127.0.0.1:%d - Your server', 10010);
-        console.log('http://127.0.0.1:%d/docs - Swagger-ui', 10010);
+    http.createServer(app).listen(serverPort, function () {
+        console.log('http://127.0.0.1:%d - Your server', serverPort);
+        console.log('http://127.0.0.1:%d/docs - Swagger-ui', serverPort);
     });
 });

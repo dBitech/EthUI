@@ -3,9 +3,9 @@
 // global variables
 var unirest = require('unirest');
 var controllerLocation = 'http://localhost:8080/hacker/api/mef/sca/v1/SCA_ETH_FDFr_EC';
-var aNode = "192.168.1.111";
-var iNode = "192.168.1.112";
-var zNode = "192.168.1.113";
+var aNode = "10.0.1.111";
+var iNode = "10.0.1.112";
+var zNode = "10.0.1.113";
 var aNodeINNI = '6';
 var zNodeINNI = '6';
 var iNodeaINNI = '5';

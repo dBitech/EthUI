@@ -232,6 +232,8 @@ $('#evp').click(function() {
   // set the visibility
   column1.visible(true);
   column2.visible(true);
+  
+  $("#cvlandiv").show();
 
   $("#next").click();
 });
@@ -244,6 +246,8 @@ $('#ep').click(function() {
   // set the visibility
   column1.visible(false);
   column2.visible(false);
+
+  $("#cvlandiv").hide();
 
   $("#next").click();
 });
@@ -388,11 +392,13 @@ $(".addSiteA").click(function() {
   var copydata = siteListTable.DataTable().row().data();
   var cellContents = copydata[2] + " " + copydata[5];
   var id = copydata[0];
-  
+    
   eLinesiteSelectTable.cell(pasterow, 1).data(cellContents).draw();
+  eLinesiteSelectTable.cell(pasterow, 2).data($("#cvlanid").val()).draw();
   siteListTable.DataTable().row().remove().draw();
 
-  simpleEth.uni[0].id = id
+  simpleEth.uni[0].id = id;
+  simpleEth.uni[0].cvlanId = $("#cvlanid").val();
 });
 
 $(".addSiteZ").click(function() {
@@ -405,9 +411,11 @@ $(".addSiteZ").click(function() {
   var id = copydata[0];
   
   eLinesiteSelectTable.cell(pasterow, 1).data(cellContents).draw();
+  eLinesiteSelectTable.cell(pasterow, 2).data($("#cvlanid").val()).draw();
   siteListTable.DataTable().row().remove().draw();
 
   simpleEth.uni[1].id = id
+  simpleEth.uni[1].cvlanId = $("#cvlanid").val();
 });
 
 //Add sites for eAccess service

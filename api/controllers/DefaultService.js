@@ -617,10 +617,16 @@ exports.addEthSvc = function (Ethsvc) {
     FDF.SCA_ETH_Flow_Points[0].ingressBandwidthProfilePerEvc.bwpCfgIdentifier = "Per EVC " + Ethsvc.uni[0].id;
     FDF.SCA_ETH_Flow_Points[0].ingressBandwidthProfilePerEvc.bwpCfgCir = Ethsvc.bw*1000;
     FDF.SCA_ETH_Flow_Points[0].ingressBandwidthProfilePerEvc.bwpCfgCbs = Math.round(Ethsvc.bw*1000/60);
-
+    
     FDF.SCA_ETH_Flow_Points[1].ingressBandwidthProfilePerEvc.bwpCfgIdentifier = "Per EVC " + Ethsvc.uni[1].id;
     FDF.SCA_ETH_Flow_Points[1].ingressBandwidthProfilePerEvc.bwpCfgCir = Ethsvc.bw*1000;
     FDF.SCA_ETH_Flow_Points[1].ingressBandwidthProfilePerEvc.bwpCfgCbs = Math.round(Ethsvc.bw*1000/60);
+
+    // CVLAN ID
+    FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.CeVlanId = Ethsvc.uni[0].cvlanId;
+    FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.CeVlanId = Ethsvc.uni[1].cvlanId;
+    
+
 
     // INNI Params
     FDF.SCA_ETH_IVC_End_Points[0].interfaceDescription = "Inni1";

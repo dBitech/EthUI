@@ -647,7 +647,16 @@ exports.addEthSvc = function (Ethsvc) {
 
     // UNI Params
     //FDF.SCA_ETH_Flow_Points
-    FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.allToOneBundling = "true";
+    if (FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.CeVlanId == "")
+    	FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.allToOneBundling = "true";
+    else
+    	FDF.SCA_ETH_Flow_Points[0].scaEthFppUniN.allToOneBundling = "false";
+
+    if (FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.ethOvcEndPoint.ovcEndPtPerUniCfgCeVlanMap.CeVlanId == "")
+    	FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.allToOneBundling = "true";
+    else
+    	FDF.SCA_ETH_Flow_Points[1].scaEthFppUniN.allToOneBundling = "false";
+    
     switch(Ethsvc.uni[0].id) {
         case 'efab5761-490e-44ff-9e28-265bb28d8f35':
         evcPerUniCfgIdentifier

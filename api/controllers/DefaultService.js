@@ -609,7 +609,7 @@ exports.addEthSvc = function (Ethsvc) {
     FDF.id = Ethsvc.id + "_fdf1";
     FDF.flowDomainId = Ethsvc.id;
     FDF.state = "active";
-    FDF.evcCfgMtuSize = 1522;
+    FDF.evcCfgMtuSize = 9216;
     FDF.evcCfgIdentifier = Ethsvc.id;
     FDF.evcStatusMaxNumUni = 1;
 
@@ -754,7 +754,7 @@ function setupIntermediateNode(fdf) {
     FDF.id = fdf.evcCfgIdentifier + "_fdf2";
     FDF.flowDomainId = fdf.evcCfgIdentifier;
     FDF.state = "active";
-    FDF.evcCfgMtuSize = 1522;
+    FDF.evcCfgMtuSize = 9216;
     FDF.evcCfgIdentifier = fdf.evcCfgIdentifier;
     FDF.evcStatusMaxNumUni = 1;
     // INNI Params
